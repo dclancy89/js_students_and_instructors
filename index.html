@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Students and Instructors</title>
+
+	<script type="text/javascript">
+		
+		var students = [ 
+		     {first_name:  'Michael', last_name : 'Jordan'},
+		     {first_name : 'John', last_name : 'Rosales'},
+		     {first_name : 'Mark', last_name : 'Guillen'},
+		     {first_name : 'KB', last_name : 'Tonel'}
+		]
+
+		for(var student in students){
+			console.log(students[student].first_name + " " + students[student].last_name);
+		}
+
+		console.log("");
+		console.log("");
+		console.log("");
+
+		var users = {
+		 'Students': [ 
+		     {first_name:  'Michael', last_name : 'Jordan'},
+		     {first_name : 'John', last_name : 'Rosales'},
+		     {first_name : 'Mark', last_name : 'Guillen'},
+		     {first_name : 'KB', last_name : 'Tonel'}
+		  ],
+		 'Instructors': [
+		     {first_name : 'Michael', last_name : 'Choi'},
+		     {first_name : 'Martin', last_name : 'Puryear'}
+		  ]
+		 }
+
+		 var keys = Object.keys(users);
+		 for(var i = 0; i < keys.length; i++) {
+		 	var key = keys[i];
+		 	console.log(key);
+		 	for(var user in users[key]) {
+		 		var name = users[key][user].first_name + " " + users[key][user].last_name
+		 		var number = parseInt(user) + 1;
+		 		var length = name.length - 1;
+		 		console.log( number + " - " + name + " - " + length);
+		 	}
+		 }
+
+
+
+
+	</script>
+
+
+</head>
+
+</html>
