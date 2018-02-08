@@ -14,11 +14,14 @@
 			     {first_name : 'KB', last_name : 'Tonel'}
 			]
 
-			// loops through the array and prints the students names
-			for(var student in students){
-				console.log(students[student].first_name + " " + students[student].last_name);
+			function printStudents(list) {
+				// loops through the array and prints the students names
+				for(var student in list){
+					console.log(list[student].first_name + " " + list[student].last_name);
+				}
 			}
 
+			printStudents(students);
 
 			// make some space in the console
 			console.log("");
@@ -40,22 +43,26 @@
 			  ]
 			 }
 
-			 //set an array of keys of users
-			 var keys = Object.keys(users);
 
-			 // loop through the array of user keys
-			 for(var i = 0; i < keys.length; i++) {
-			 	var key = keys[i];
-			 	console.log(key);
+			 function printUsers(list) {
+			 	var keys = Object.keys(list);
 
-			 	// loop through each user in the key
-			 	for(var user in users[key]) {
-			 		var name = (users[key][user].first_name + " " + users[key][user].last_name).toUpperCase();
-			 		var number = parseInt(user) + 1;
-			 		var length = name.length - 1;
-			 		console.log( number + " - " + name + " - " + length);
-			 	}
+				 // loop through the array of user keys
+				 for(var i = 0; i < keys.length; i++) {
+				 	var key = keys[i];
+				 	console.log(key);
+
+				 	// loop through each user in the key
+				 	for(var user in list[key]) {
+				 		var name = (list[key][user].first_name + " " + list[key][user].last_name).toUpperCase();
+				 		var number = parseInt(user) + 1;
+				 		var length = name.length - 1;
+				 		console.log( number + " - " + name + " - " + length);
+				 	}
+				 }
 			 }
+
+			 printUsers(users);
 
 
 
